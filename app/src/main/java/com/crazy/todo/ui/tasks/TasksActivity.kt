@@ -2,15 +2,13 @@ package com.crazy.todo.ui.tasks
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import com.crazy.todo.R
+import android.support.v4.app.Fragment
+import com.crazy.todo.ui.base.activity.SingleFragmentActivity
 
-class TasksActivity : AppCompatActivity() {
+class TasksActivity : SingleFragmentActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun getFragment(): Fragment {
+        return TasksFragment.newInstance()
     }
 
     companion object {
