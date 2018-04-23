@@ -36,7 +36,7 @@ class AppDelegate : MultiDexApplication() {
     companion object {
         var appContext: Context? = null
             private set
-        var viewModelFactory: ViewModelProvider.Factory? = null
+        lateinit var viewModelFactory: ViewModelProvider.Factory
             private set
     }
 }

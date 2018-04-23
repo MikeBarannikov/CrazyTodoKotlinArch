@@ -9,5 +9,6 @@ data class Film(
 		@SerializedName("director") val director: String = "",
 		@SerializedName("producer") val producer: String = "",
 		@SerializedName("release_date") val releaseDate: String = "",
-		@SerializedName("rt_score") val rtScore: String = ""
+		@SerializedName("rt_score") val rtScore: String = "",
+		@SerializedName("url") val url: String = ""
 )

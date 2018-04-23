@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.crazy.todo.R
-import com.crazy.todo.ui.tasks.TasksActivity
+import com.crazy.todo.ui.films.FilmsActivity
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -35,10 +35,10 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun openNextActivity() {
-        startActivity(TasksActivity.makeIntent(this))
+        startActivity(FilmsActivity.makeIntent(this))
     }
 
     companion object {
-        private val OPEN_NEXT_ACTIVITY_DELAY = 1000
+        private const val OPEN_NEXT_ACTIVITY_DELAY = 1000
     }
 }
