@@ -11,12 +11,15 @@ import android.view.ViewGroup
 import com.crazy.todo.AppDelegate
 import com.crazy.todo.R
 import com.crazy.todo.data.model.Film
+import com.crazy.todo.ui.base.view.LoadingView
+import com.crazy.todo.ui.dialog.LoadingDialog
 import com.crazy.todo.ui.films.adapter.FilmsAdapter
 import com.crazy.todo.ui.films.adapter.holder.FilmViewHolder
 import kotlinx.android.synthetic.main.fr_films.*
 
 class FilmsFragment : Fragment(), FilmViewHolder.FilmListener {
     private lateinit var viewModel: FilmViewModel
+    private lateinit var loadingView: LoadingView
     private val adapter = FilmsAdapter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -27,11 +30,20 @@ class FilmsFragment : Fragment(), FilmViewHolder.FilmListener {
         super.onActivityCreated(savedInstanceState)
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(activity)
+
+        loadingView = LoadingDialog.view(this)
+
         viewModel = ViewModelProviders.of(this, AppDelegate.viewModelFactory).get(FilmViewModel::class.java)
         viewModel.films.observe(
                 this,
                 Observer {
                     adapter.changeData(it)
+                }
+        )
+        viewModel.loading.observe(
+                this,
+                Observer {
+                    if (it == true) loadingView.showLoadingIndicator() else loadingView.hideLoadingIndicator()
                 }
         )
         viewModel.fetchFilms()
@@ -41,7 +53,7 @@ class FilmsFragment : Fragment(), FilmViewHolder.FilmListener {
     }
 
     override fun onFavouriteClicked(film: Film) {
-        // TODO: make film favourite
+        viewModel.updateFavourite(film.id, !film.favourite)
     }
 
     companion object {

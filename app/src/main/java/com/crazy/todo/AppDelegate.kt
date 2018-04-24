@@ -29,7 +29,10 @@ class AppDelegate : MultiDexApplication() {
         val urlDataSource = UrlDataSourceImpl()
         val retrofitProvider = RetrofitProvider(okHttpProvider.provideClient(), urlDataSource)
         val dataSourceProvider = DataSourceProvider(retrofitProvider.provideRetrofit())
-        val repositoryProvider = RepositoryProvider(dataSourceProvider.provideFilmsDataSource())
+        val repositoryProvider = RepositoryProvider(
+                dataSourceProvider.provideFilmDataSource(),
+                dataSourceProvider.provideLocalFilmDataSource()
+        )
         viewModelFactory = ViewModelFactory(repositoryProvider.provideRepository())
     }
 
