@@ -7,11 +7,12 @@ import com.crazy.todo.R
 import com.crazy.todo.data.model.Film
 import com.crazy.todo.ui.films.adapter.holder.FilmViewHolder
 
-class FilmsAdapter : RecyclerView.Adapter<FilmViewHolder>() {
+class FilmsAdapter(private val listener: FilmViewHolder.FilmListener) : RecyclerView.Adapter<FilmViewHolder>() {
     private val items: MutableList<Film> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmViewHolder {
-        return FilmViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.li_film, parent, false))
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.li_film, parent, false)
+        return FilmViewHolder(view, listener)
     }
 
     override fun getItemCount(): Int = items.size

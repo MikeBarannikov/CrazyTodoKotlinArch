@@ -10,5 +10,6 @@ data class Film(
 		@SerializedName("producer") val producer: String = "",
 		@SerializedName("release_date") val releaseDate: String = "",
 		@SerializedName("rt_score") val rtScore: String = "",
-		@SerializedName("url") val url: String = ""
+		@SerializedName("url") val url: String = "",
+        @SerializedName("favourite") var favourite: Boolean = false
 )

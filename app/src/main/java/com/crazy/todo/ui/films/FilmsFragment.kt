@@ -10,13 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.crazy.todo.AppDelegate
 import com.crazy.todo.R
+import com.crazy.todo.data.model.Film
 import com.crazy.todo.ui.films.adapter.FilmsAdapter
+import com.crazy.todo.ui.films.adapter.holder.FilmViewHolder
 import kotlinx.android.synthetic.main.fr_films.*
 
-class FilmsFragment : Fragment() {
-
+class FilmsFragment : Fragment(), FilmViewHolder.FilmListener {
     private lateinit var viewModel: FilmViewModel
-    private val adapter = FilmsAdapter()
+    private val adapter = FilmsAdapter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fr_films, container, false)
@@ -34,6 +35,13 @@ class FilmsFragment : Fragment() {
                 }
         )
         viewModel.fetchFilms()
+    }
+    override fun onItemClicked(film: Film) {
+        // TODO: open film activity
+    }
+
+    override fun onFavouriteClicked(film: Film) {
+        // TODO: make film favourite
     }
 
     companion object {
