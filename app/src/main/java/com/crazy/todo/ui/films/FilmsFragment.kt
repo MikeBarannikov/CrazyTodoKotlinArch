@@ -13,6 +13,7 @@ import com.crazy.todo.R
 import com.crazy.todo.data.model.Film
 import com.crazy.todo.ui.base.view.LoadingView
 import com.crazy.todo.ui.dialog.LoadingDialog
+import com.crazy.todo.ui.film.FilmActivity
 import com.crazy.todo.ui.films.adapter.FilmsAdapter
 import com.crazy.todo.ui.films.adapter.holder.FilmViewHolder
 import kotlinx.android.synthetic.main.fr_films.*
@@ -46,10 +47,15 @@ class FilmsFragment : Fragment(), FilmViewHolder.FilmListener {
                     if (it == true) loadingView.showLoadingIndicator() else loadingView.hideLoadingIndicator()
                 }
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
         viewModel.fetchFilms()
     }
+
     override fun onItemClicked(film: Film) {
-        // TODO: open film activity
+        activity?.let { startActivity(FilmActivity.makeIntent(it, film.id)) }
     }
 
     override fun onFavouriteClicked(film: Film) {
@@ -57,6 +63,6 @@ class FilmsFragment : Fragment(), FilmViewHolder.FilmListener {
     }
 
     companion object {
-        fun newInstance(): FilmsFragment = FilmsFragment()
+        fun newInstance() = FilmsFragment()
     }
 }

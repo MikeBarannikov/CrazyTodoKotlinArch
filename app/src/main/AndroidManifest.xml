@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".ui.films.FilmsActivity">
         </activity>
+        <activity android:name=".ui.film.FilmActivity">
+        </activity>
     </application>
 
 </manifest>

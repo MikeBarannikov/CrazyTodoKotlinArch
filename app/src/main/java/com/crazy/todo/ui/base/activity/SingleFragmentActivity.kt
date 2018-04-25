@@ -19,9 +19,7 @@ abstract class SingleFragmentActivity : AppCompatActivity() {
     }
 
     @LayoutRes
-    protected open fun getLayout(): Int {
-        return R.layout.ac_single_frame
-    }
+    protected open fun getLayout() = R.layout.ac_single_frame
 
     abstract fun getFragment(): Fragment
 }

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/filmWatched"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filmDescription"/>
+
+        <TextView
+            android:id="@+id/filmDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/descriptionLabel"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionLabel"
+            tools:text="Text text long long long descriptionText text long long long description Text text long long long description "/>
+
+        <TextView
+            android:id="@+id/filmProducer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/producerLabel"
+            app:layout_constraintTop_toTopOf="@+id/producerLabel"
+            tools:text="Halo mu cha cho"/>
+
+        <TextView
+            android:id="@+id/filmDirector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/directorLabel"
+            app:layout_constraintTop_toTopOf="@+id/directorLabel"
+            tools:text="Him chu hi"/>
+
+        <TextView
+            android:id="@+id/producerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginTop="8dp"
+            android:text="Producer"
+            app:layout_constraintStart_toStartOf="@+id/directorLabel"
+            app:layout_constraintTop_toBottomOf="@+id/directorLabel"/>
+
+        <TextView
+            android:id="@+id/directorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Director"
+            app:layout_constraintStart_toStartOf="@+id/ratingLabel"
+            app:layout_constraintTop_toBottomOf="@+id/ratingLabel"/>
+
+        <TextView
+            android:id="@+id/descriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Description"
+            app:layout_constraintStart_toStartOf="@+id/producerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/producerLabel"/>
+
+        <TextView
+            android:id="@+id/ratingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Rating"
+            app:layout_constraintStart_toStartOf="@+id/releaseDateLabel2"
+            app:layout_constraintTop_toBottomOf="@+id/releaseDateLabel2"/>
+
+        <TextView
+            android:id="@+id/filmTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="My film title"/>
+
+        <TextView
+            android:id="@+id/filmReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/releaseDateLabel2"
+            app:layout_constraintTop_toTopOf="@+id/releaseDateLabel2"
+            tools:text="1999"/>
+
+        <TextView
+            android:id="@+id/filmRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ratingLabel"
+            app:layout_constraintTop_toTopOf="@+id/ratingLabel"
+            tools:text="95"/>
+
+        <TextView
+            android:id="@+id/releaseDateLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Release date"
+            app:layout_constraintStart_toStartOf="@+id/filmTitle"
+            app:layout_constraintTop_toBottomOf="@+id/filmTitle"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

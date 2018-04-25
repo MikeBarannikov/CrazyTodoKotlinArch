@@ -8,4 +8,6 @@ interface Repository {
     suspend fun updateFavourite(filmId: String, favouriteStatus: Boolean)
 
     suspend fun isFavourite(filmId: String): Boolean
+
+    suspend fun getFilm(filmId: String): Film
 }
